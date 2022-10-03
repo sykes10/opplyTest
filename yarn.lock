@@ -69,6 +69,89 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@formkit/core@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/core/-/core-1.0.0-beta.11.tgz#72a5164f7a0a181b4b237912e2fe9ef027904963"
+  integrity sha512-1yIQUicY1ZVGkeT0AEVp3ahx5FdJg+snyc8yaitsNmQeCSq1Ju5o1nCRcpcZ7j2ezMbGUiL7nTscGGejC15N2Q==
+  dependencies:
+    "@formkit/utils" "1.0.0-beta.11"
+
+"@formkit/dev@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/dev/-/dev-1.0.0-beta.11.tgz#269fdd8cf9e40edb94af67f1398f10d06e2c0dad"
+  integrity sha512-YuPfE4ZoIAOQfawKlnCxXdnNOktckGNUhtCirpgsyBuHVu15rX1E5mYRAyEBhDGeEPV8IOFNpooSKA/y9W7dtw==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+    "@formkit/utils" "1.0.0-beta.11"
+
+"@formkit/i18n@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/i18n/-/i18n-1.0.0-beta.11.tgz#4763e9ccd40b9a4e60faf3f9884cd9d6e3fcf855"
+  integrity sha512-ID4y9r5NoKy+rIiv41UGCtrg8iR3Lor30oBEUJlEDPAh34vlwh4g2jorXgysdSVMRCuLnqGyGspLnrPdxgSszw==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+    "@formkit/utils" "1.0.0-beta.11"
+    "@formkit/validation" "1.0.0-beta.11"
+
+"@formkit/inputs@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/inputs/-/inputs-1.0.0-beta.11.tgz#75f0eae937cb8d075af0c9d9137c0183bdeba7f7"
+  integrity sha512-DF+olkewjAE/q+alsG1t4GFX7JHzVvTCukOOEuqp8AzT+MGyZFzxikSXd8qA5zX+1BvRCgQwzWZMBaQLUo3IMA==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+
+"@formkit/observer@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/observer/-/observer-1.0.0-beta.11.tgz#f91a92859895ab5f0a52212a887318d1c1e3094d"
+  integrity sha512-jpOqOJdpydl/2eOL0yXVZjXYdk9tY0EsAf9e5PTxXcWOZpBskSwPdjNMnx8y9ycrpj6lKPcbMfs2bjnQQue8IQ==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+    "@formkit/utils" "1.0.0-beta.11"
+
+"@formkit/rules@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/rules/-/rules-1.0.0-beta.11.tgz#f5968ef1f400c5b5c32ed150978b3d930232c8c3"
+  integrity sha512-6SQ+fGXTx9MLMUk832x9oR/423U4/7TpDxyx/cjz1xaQjAKzorwNGbjiiRszp4f3cSYcpyi/SZ36n0UktLaCVA==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+    "@formkit/utils" "1.0.0-beta.11"
+    "@formkit/validation" "1.0.0-beta.11"
+
+"@formkit/themes@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/themes/-/themes-1.0.0-beta.11.tgz#36441daa4ebfa1ab396ee6f9ae5a56cff42dc10d"
+  integrity sha512-OmefvFoLHZLnmbuT+Mqbqr681rumc62Q08Y1g82ZxG6aXWculwQYVQfZJeJFrqrJPpccsfoSflWeAuAMWiP/Yw==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+
+"@formkit/utils@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/utils/-/utils-1.0.0-beta.11.tgz#3a9a131bdb690a5156b2d5f5f22b58c5b35f534a"
+  integrity sha512-ajeB6A0WJXaErwIgdHGnVZotghvWOZ+JvFKK6fM/rYQza2O4YFiPAVKqJRQjMbW5Jxia4sT7PQhPUFvZQFbuKQ==
+
+"@formkit/validation@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/validation/-/validation-1.0.0-beta.11.tgz#a486b73130360215896e97bad8ff1a9ce562d23a"
+  integrity sha512-7HePIek0Y2MsH45lHDyCekJfENNdIr8ZIkJQx4VwAlfbIyZElZx5VsxInCSLf/03aOu4PhabOxpNUt38AP2hAg==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+    "@formkit/observer" "1.0.0-beta.11"
+
+"@formkit/vue@^1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@formkit/vue/-/vue-1.0.0-beta.11.tgz#114999415a3ba6e57ba32f78c4e87ee8e413a191"
+  integrity sha512-0tVy8JZ/j4QbmYlVPJyFGZOukWgRBTV+DhyGo82FZvvb2+YrRAbDhqJGLIjLyOO0pNTwk7arSgDiiKd/OK8LtA==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.11"
+    "@formkit/dev" "1.0.0-beta.11"
+    "@formkit/i18n" "1.0.0-beta.11"
+    "@formkit/inputs" "1.0.0-beta.11"
+    "@formkit/observer" "1.0.0-beta.11"
+    "@formkit/rules" "1.0.0-beta.11"
+    "@formkit/themes" "1.0.0-beta.11"
+    "@formkit/utils" "1.0.0-beta.11"
+    "@formkit/validation" "1.0.0-beta.11"
+
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
   resolved "https://artifactory.rmn.com/artifactory/api/npm/vouchercodes-npm/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
