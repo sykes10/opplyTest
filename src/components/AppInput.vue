@@ -1,8 +1,11 @@
 <template>
   <div class="flex flex-col gap-2">
-    <label class="font-bold text-sm" :for="props.label" v-if="props.label">{{
-      props.label
-    }}</label>
+    <label
+      class="font-bold text-sm font-montserrat"
+      :for="props.label"
+      v-if="props.label"
+      >{{ props.label }}</label
+    >
     <input
       :class="inputStyle"
       v-bind="$attrs"

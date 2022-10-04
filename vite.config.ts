@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     VitePluginFonts({
       google: {
-        families: ['Peralta'],
+        families: ['Peralta', 'Montserrat'],
       },
     }),
   ],
