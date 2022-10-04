@@ -6,6 +6,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'Home',
+      redirect: '/suppliers',
+    },
+    {
+      path: '/suppliers',
       name: 'SuppliersList',
       component: SuppliersListView,
     },
