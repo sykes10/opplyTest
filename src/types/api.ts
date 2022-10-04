@@ -1,11 +1,6 @@
-export type SuccessfulSinupResponse = {
-  id: string;
-  username: string;
-  first_name: string;
-  last_name: string;
-  email: string;
-  auth_token: string;
-};
+import type { User } from "@/types/user";
+
+export type SuccessfulSinupResponse = User;
 
 export type UnsuccessfulSinupResponse = {
   username: string[];
@@ -21,4 +16,6 @@ export type SuccessfulLoginResponse = {
 };
 export type UnsuccessfulLoginResponse = {
   non_field_errors: string[];
+  username: string[];
+  password: string[];
 };

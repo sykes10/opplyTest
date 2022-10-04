@@ -7,16 +7,21 @@ export const useUserStore = defineStore("user", () => {
   const user = ref<User>({
     email: "",
     id: "",
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     username: "",
-    token: "",
+    auth_token: "",
   });
 
-  function setToken(token: string) {
-    user.value.token = token;
+  function persistToken(token: string) {
+    user.value.auth_token = token;
     useLocalStorage("token", token);
   }
 
-  return { user };
+  function setUser(userData: User) {
+    user.value = userData;
+    persistToken(userData.auth_token);
+  }
+
+  return { user, setUser, persistToken };
 });

@@ -10,8 +10,14 @@ const router = createRouter({
       component: SuppliersListView,
     },
     {
-      path: "/auth",
-      name: "Authentication",
+      path: "/login",
+      name: "Login",
+      component: () => import("../views/AuthView.vue"),
+    },
+
+    {
+      path: "/signup",
+      name: "Signup",
       component: () => import("../views/AuthView.vue"),
     },
   ],
@@ -19,8 +25,12 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   const userStore = useUserStore();
-  if (!userStore.$state.user.token && to.fullPath !== "/auth") {
-    return { name: "Authentication" };
+  const allowedPaths = ["/login", "/signup"];
+  if (
+    !userStore.$state.user.auth_token &&
+    !allowedPaths.includes(to.fullPath)
+  ) {
+    return { name: "Login" };
   }
 });
 
