@@ -14,7 +14,7 @@ onMounted(async () => {
 <template>
   <h2 class="text-4xl font-bold text-center my-10">List of Quotes</h2>
   <section class="max-w-3xl mx-auto">
-    <table class="w-full text-sm text-left border">
+    <table class="w-full text-sm text-left border table-auto">
       <thead class="text-xs uppercase bg-purple-700 text-white">
         <tr>
           <th class="py-3 px-6">Quote</th>
@@ -27,7 +27,7 @@ onMounted(async () => {
           :key="quote.id"
           class="bg-white border-b text-gray-700"
         >
-          <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+          <td class="py-4 px-6 font-medium text-gray-900">
             {{ quote.title }}
           </td>
           <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">

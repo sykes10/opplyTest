@@ -17,7 +17,6 @@
 <script lang="ts" setup>
 import type { Supplier } from '@/types/entities';
 import type { PropType } from 'vue';
-import { RouterLink } from 'vue-router';
 
 const props = defineProps({
   supplier: {
