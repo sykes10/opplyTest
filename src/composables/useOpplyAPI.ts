@@ -1,19 +1,21 @@
-import { createFetch } from "@vueuse/core";
-import { useUserStore } from "@/stores/user";
+import { createFetch } from '@vueuse/core';
+import { useUserStore } from '@/stores/user';
 import type {
   AuthVariables,
   SuccessfulLoginResponse,
   UnsuccessfulLoginResponse,
   UnsuccessfulSinupResponse,
   SuccessfulSinupResponse,
-} from "@/types/api";
-import { reactive } from "vue";
+  GetQoutesResponse,
+  GetSuppliersResponse,
+} from '@/types/api';
+import { reactive } from 'vue';
 
 const useFetch = createFetch({
-  baseUrl: "https://february-21.herokuapp.com",
+  baseUrl: 'https://february-21.herokuapp.com',
   options: {
     async beforeFetch({ options, url }) {
-      if (url !== "/auth") {
+      if (url !== '/auth') {
         const userStore = useUserStore();
         if (userStore.$state.user.auth_token) {
           options.headers = {
@@ -29,19 +31,19 @@ const useFetch = createFetch({
     },
   },
   fetchOptions: {
-    mode: "cors",
+    mode: 'cors',
   },
 });
 
 export function useOpplyAPI() {
   const userData = reactive<AuthVariables>({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
 
   async function login() {
     try {
-      return useFetch<SuccessfulLoginResponse>("/api-token-auth/", {
+      return useFetch<SuccessfulLoginResponse>('/api-token-auth/', {
         async afterFetch(context) {
           const userStore = useUserStore();
           if (context.data.token) {
@@ -59,7 +61,7 @@ export function useOpplyAPI() {
 
   async function signup() {
     try {
-      return useFetch("/api/v1/users/", {
+      return useFetch('/api/v1/users/', {
         async afterFetch(context) {
           const userStore = useUserStore();
           if (context.data.id) {
@@ -76,9 +78,43 @@ export function useOpplyAPI() {
     }
   }
 
+  async function getQuotes() {
+    try {
+      return useFetch('/api/v1/quotes/').get().json<GetQoutesResponse>();
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
+  async function getSuppliers() {
+    try {
+      return useFetch('​/api​/v1​/suppliers​/')
+        .get()
+        .json<GetSuppliersResponse>();
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
+  async function getSuppliersById(id: number) {
+    try {
+      return useFetch(`/api/v1/suppliers/${id}`)
+        .get()
+        .json<GetSuppliersResponse>();
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
+
   function collectAPIErrors(errors: { [key: string]: string[] }): string[] {
     return Object.values(errors).flatMap((error) => error[0]);
   }
 
-  return { login, signup, userData, collectAPIErrors };
+  return {
+    login,
+    signup,
+    userData,
+    collectAPIErrors,
+    getSuppliers,
+    getQuotes,
+    getSuppliersById,
+  };
 }

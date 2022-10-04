@@ -39,29 +39,29 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useOpplyAPI } from "@/composables/useOpplyAPI";
-import type { UnsuccessfulSinupResponse } from "@/types/api";
-import { computed, ref, watch } from "vue";
-import { useRouter, RouterLink, useRoute } from "vue-router";
-import AppInput from "@/components/AppInput.vue";
-import AppButton from "@/components/AppButton.vue";
+import { useOpplyAPI } from '@/composables/useOpplyAPI';
+import type { UnsuccessfulSinupResponse } from '@/types/api';
+import { computed, ref, watch } from 'vue';
+import { useRouter, RouterLink, useRoute } from 'vue-router';
+import AppInput from '@/components/AppInput.vue';
+import AppButton from '@/components/AppButton.vue';
 
 const $router = useRouter();
 const $route = useRoute();
 const errorMessage = ref<string[]>([]);
 const authMode = computed(() =>
-  $route.name === "Login" ? "Log In" : "Sign Up"
+  $route.name === 'Login' ? 'Log In' : 'Sign Up'
 );
 const authAlternativeMode = computed(() =>
-  $route.name === "Login" ? "Sign Up" : "Log In"
+  $route.name === 'Login' ? 'Sign Up' : 'Log In'
 );
 const authAlternativeModeText = computed(() =>
-  $route.name === "Login"
+  $route.name === 'Login'
     ? "Don't have an account?"
-    : "Already have an account?"
+    : 'Already have an account?'
 );
 const authAlternativeModePath = computed(() =>
-  $route.name === "Login" ? "/signup" : "/login"
+  $route.name === 'Login' ? '/signup' : '/login'
 );
 
 watch(
@@ -74,7 +74,7 @@ const { signup, login, userData, collectAPIErrors } = useOpplyAPI();
 async function handleAuth() {
   try {
     const { data, error } =
-      authMode.value === "Log In" ? await login() : await signup();
+      authMode.value === 'Log In' ? await login() : await signup();
     if (error.value) {
       errorMessage.value = collectAPIErrors(
         data.value as UnsuccessfulSinupResponse
@@ -82,10 +82,10 @@ async function handleAuth() {
       return;
     }
     if (!error.value && data.value) {
-      $router.push("/");
+      $router.push('/');
     }
   } catch (error) {
-    errorMessage.value[0] = "Unexpected error happened";
+    errorMessage.value[0] = 'Unexpected error happened';
   }
 }
 </script>

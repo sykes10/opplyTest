@@ -13,13 +13,13 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useFormElementCommonStyles } from "@/composables/useFormElementCommonStyles";
+import { useFormElementCommonStyles } from '@/composables/useFormElementCommonStyles';
 
 const props = defineProps<{ modelValue: string; label: string }>();
 const inputStyle = useFormElementCommonStyles();
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 function onInput(event: Event) {
-  emit("update:modelValue", (event.target as HTMLInputElement).value);
+  emit('update:modelValue', (event.target as HTMLInputElement).value);
 }
 </script>

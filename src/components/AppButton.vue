@@ -10,7 +10,7 @@
   </button>
 </template>
 <script lang="ts" setup>
-import { useFormElementCommonStyles } from "@/composables/useFormElementCommonStyles";
+import { useFormElementCommonStyles } from '@/composables/useFormElementCommonStyles';
 const inputStyle = useFormElementCommonStyles();
 const props = defineProps<{ isLoading?: boolean }>();
 </script>
