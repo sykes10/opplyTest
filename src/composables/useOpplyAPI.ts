@@ -8,6 +8,7 @@ import type {
   SuccessfulSinupResponse,
   GetQoutesResponse,
   GetSuppliersResponse,
+  GetSuppliersByIDResponse,
 } from '@/types/api';
 import { reactive } from 'vue';
 
@@ -15,7 +16,8 @@ const useFetch = createFetch({
   baseUrl: 'https://february-21.herokuapp.com',
   options: {
     async beforeFetch({ options, url }) {
-      if (url !== '/auth') {
+      const allowedEndpoints = ['/api-token-auth/', '/api/v1/users/'];
+      if (!allowedEndpoints.includes(url)) {
         const userStore = useUserStore();
         if (userStore.$state.user.auth_token) {
           options.headers = {
@@ -87,18 +89,16 @@ export function useOpplyAPI() {
   }
   async function getSuppliers() {
     try {
-      return useFetch('​/api​/v1​/suppliers​/')
-        .get()
-        .json<GetSuppliersResponse>();
+      return useFetch('/api/v1/suppliers/').get().json<GetSuppliersResponse>();
     } catch (error) {
       throw new Error((error as Error).message);
     }
   }
   async function getSuppliersById(id: number) {
     try {
-      return useFetch(`/api/v1/suppliers/${id}`)
+      return useFetch(`/api/v1/suppliers/${id}/`)
         .get()
-        .json<GetSuppliersResponse>();
+        .json<GetSuppliersByIDResponse>();
     } catch (error) {
       throw new Error((error as Error).message);
     }

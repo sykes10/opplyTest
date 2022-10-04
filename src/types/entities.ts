@@ -11,6 +11,8 @@ export type Supplier = {
   id: number;
   name: string;
   description: string;
+  code?: string;
+  type?: string;
 };
 export type Quote = {
   id: number;

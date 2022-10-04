@@ -10,6 +10,16 @@ const router = createRouter({
       component: SuppliersListView,
     },
     {
+      path: '/supplier/:id',
+      name: 'SuppliersDetail',
+      component: () => import('@/views/SuppliersDetailView.vue'),
+    },
+    {
+      path: '/quotes',
+      name: 'QuotesList',
+      component: () => import('@/views/QuotesListView.vue'),
+    },
+    {
       path: '/login',
       name: 'Login',
       component: () => import('@/views/AuthView.vue'),
