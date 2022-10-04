@@ -18,6 +18,7 @@
     "pinia": "^2.0.21",
     "postcss": "^8.4.17",
     "tailwindcss": "^3.1.8",
+    "vite-plugin-fonts": "^0.6.0",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
