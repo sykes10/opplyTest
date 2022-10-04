@@ -45,7 +45,7 @@ export function useOpplyAPI() {
         async afterFetch(context) {
           const userStore = useUserStore();
           if (context.data.token) {
-            userStore.user.auth_token = context.data.token;
+            userStore.setToken(context.data.token);
           }
           return context;
         },

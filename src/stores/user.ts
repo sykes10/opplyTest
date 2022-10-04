@@ -1,7 +1,9 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
 import type { User } from "@/types/user";
-import { useLocalStorage } from "@vueuse/core";
+import { useSessionStorage } from "@vueuse/core";
+
+const localStorage = useSessionStorage("token", "");
 
 export const useUserStore = defineStore("user", () => {
   const user = ref<User>({
@@ -10,12 +12,16 @@ export const useUserStore = defineStore("user", () => {
     first_name: "",
     last_name: "",
     username: "",
-    auth_token: "",
+    auth_token: localStorage.value || "",
   });
 
   function persistToken(token: string) {
+    localStorage.value = token;
+  }
+
+  function setToken(token: string) {
     user.value.auth_token = token;
-    useLocalStorage("token", token);
+    persistToken(token);
   }
 
   function setUser(userData: User) {
@@ -23,5 +29,5 @@ export const useUserStore = defineStore("user", () => {
     persistToken(userData.auth_token);
   }
 
-  return { user, setUser, persistToken };
+  return { user, setUser, setToken };
 });

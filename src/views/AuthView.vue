@@ -9,12 +9,14 @@
         label="username"
         v-model="userData.username"
         placeholder="choose a username"
+        autocomplete="username"
       />
       <AppInput
         type="password"
         label="password"
         v-model="userData.password"
         placeholder="set your password"
+        autocomplete="current-password"
       />
       <AppButton
         class="uppercase border-none rounded bg-purple-700 text-white font-medium px-3 py-1 h-10"
