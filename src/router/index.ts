@@ -35,6 +35,10 @@ const router = createRouter({
       name: 'Signup',
       component: () => import('@/views/AuthView.vue'),
     },
+    {
+      path: '/*',
+      redirect: '/suppliers',
+    },
   ],
 });
 

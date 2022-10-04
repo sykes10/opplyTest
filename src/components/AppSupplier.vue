@@ -1,8 +1,5 @@
 <template>
-  <RouterLink
-    :to="`/supplier/${props.supplier?.id}`"
-    class="rounded border shadow cursor-pointer inline-block"
-  >
+  <article class="rounded border shadow cursor-pointer inline-block">
     <div
       class="py-1 w-full bg-purple-700 rounded-t border-none top-0 left-0 text-white text-left pl-4"
     >
@@ -15,7 +12,7 @@
         {{ props.supplier.description }}
       </p>
     </div>
-  </RouterLink>
+  </article>
 </template>
 <script lang="ts" setup>
 import type { Supplier } from '@/types/entities';
