@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useOpplyAPI } from '@/composables/useOpplyAPI';
-import { parseSuppliers } from '@/lib/supplier';
-import type { Supplier, Quote } from '@/types/entities';
+import type { Quote } from '@/types/entities';
 import { onMounted, ref } from 'vue';
 const { getQuotes } = useOpplyAPI();
 const quotes = ref<Quote[]>([]);
