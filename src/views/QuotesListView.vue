@@ -13,7 +13,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h2 class="text-4xl font-bold text-center my-10">List of Suppliers</h2>
+  <h2 class="text-4xl font-bold text-center my-10">List of Quotes</h2>
   <section class="max-w-3xl mx-auto">
     <table class="w-full text-sm text-left border">
       <thead class="text-xs uppercase bg-purple-700 text-white">
